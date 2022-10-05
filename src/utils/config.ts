@@ -48,7 +48,8 @@ function getOptionalIfMultitenantConfigFromEnv(key: string): string | undefined 
 }
 
 export function getConfig(): StorageConfigType {
-  dotenv.config()
+  dotenv.config({ path: ".env.2" })
+  //console.log('[[[[env]]]]', process.env)
 
   return {
     adminApiKeys: getOptionalConfigFromEnv('ADMIN_API_KEYS') || '',
